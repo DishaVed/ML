@@ -1,0 +1,633 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\title{Machine Learning Numerical}
+\usepackage{amsmath}
+\begin{document}
+
+\textbf{Q1.} Compute one iteration of gradient descent update for both $\theta_0$ and $\theta_1$ for the training example given below:
+
+\begin{itemize}
+  \item $x = [1, 2, 3]$ and $y = [2, 3, 5]$
+  \item Linear model: $h_\theta(x) = \theta_0 + \theta_1 x$
+  \item Initial values: $\theta_0 = 0.5$, $\theta_1 = 1.0$
+  \item Learning rate: $\alpha = 0.1$
+\end{itemize}
+
+Compute one iteration of gradient descent update for both $\theta_0$ and $\theta_1$ using the cost function, where $m$ is the number of training examples. .
+
+\vspace{1\baselineskip}
+
+\textbf{Q2.} Predict Car Price Based on Age for the following dataset:
+
+\begin{itemize}
+  \item Training examples: \\
+  $x = [1, 3, 5]$ \hfill(Car age in years) \\
+  $y = [9, 5, 1]$ \hfill (Price in \$1000s)
+  \item Hypothesis: $h_\theta(x) = \theta_0 + \theta_1 x$
+  \item Initial values: $\theta_0 = 1.0$, $\theta_1 = -1.0$
+  \item Learning rate: $\alpha = 0.01$
+\end{itemize}
+
+Compute one iteration of gradient descent to update both $\theta_0$ and $\theta_1$ using the cost function. where $m$ is the number of training examples.
+
+\vspace{1\baselineskip}
+
+\textbf{Q3.} You have a softmax classifier with 3 classes. The input feature vector and parameters are given as:
+
+\[
+x = 
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}, \quad
+W = 
+\begin{bmatrix}
+0.1 & 0.2 & -0.1 \\
+-0.2 & 0.1 & 0.3
+\end{bmatrix}, \quad
+b = 
+\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item[(a)] Compute the logits: \( z = Wx + b \)
+    \item[(b)] Compute the softmax output (i.e., the probabilities for each class):
+    \[
+    \text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j} e^{z_j}}
+    \]
+\end{itemize}
+
+\vspace{1\baselineskip}
+
+\textbf{Q4.} By referring to the following 2-layer neural network:
+
+\begin{itemize}
+    \item Input layer: 2 units
+    \item Hidden layer: 2 units with ReLU activation
+    \item Output layer: 2 units with softmax activation
+\end{itemize}
+
+\textbf{Weights and Biases:}
+\[
+W^{[1]} = 
+\begin{bmatrix}
+1 & -1 \\
+0 & 2
+\end{bmatrix}, \quad
+b^{[1]} = 
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}, \quad
+W^{[2]} = 
+\begin{bmatrix}
+1 & 1 \\
+-1 & 2
+\end{bmatrix}, \quad
+b^{[2]} = 
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+\]
+
+\textbf{Input:}
+\[
+x = 
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item[(a)] Compute \( z^{[1]} = W^{[1]} x + b^{[1]} \), and then compute \( a^{[1]} \) using ReLU activation.
+    
+    \item[(b)] Compute \( z^{[2]} = W^{[2]} a^{[1]} + b^{[2]} \), and then compute \( a^{[2]} \) using softmax activation.
+\end{itemize}
+\vspace{1\baselineskip}
+
+\textbf{Q5.} Suppose you initialize all weights of a 3-layer neural network to 0.1. If your activation function is ReLU, and the input is
+
+\[
+x = 
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}
+\]
+
+what will happen to the activations in the hidden layers?
+Assume identical weights for all layers and zero biases. Use the ReLU activation function.
+\vspace{1\baselineskip}
+
+\textbf{Q6.} Consider training a logistic regression model with L2 regularization.
+
+\begin{itemize}
+    \item Number of training examples: \( m = 2 \)
+    \item Regularization parameter: \( \lambda = 1 \)
+    \item Weights: 
+    \[
+    w = 
+    \begin{bmatrix}
+    1 \\
+    2
+    \end{bmatrix}
+    \]
+    \item Cross-entropy loss: \( L = 0.3 \)
+\end{itemize}
+
+Compute the total cost using the regularized cost function:
+\[
+J(w) = \frac{1}{m} \sum_{i=1}^{m} L^{(i)} + \frac{\lambda}{2m} \|w\|^2
+\]
+
+
+\textbf{Q7.} The given training a model with the following:
+
+\begin{itemize}
+    \item Weights: \( w = 
+    \begin{bmatrix}
+    0.5 \\
+    -0.5
+    \end{bmatrix} \)
+    \item Learning rate: \( \alpha = 0.1 \)
+    \item Gradient: \( \nabla_w J = 
+    \begin{bmatrix}
+    1.5 \\
+    -2.5
+    \end{bmatrix} \)
+\end{itemize}
+
+Perform one gradient descent update step using the rule:
+\[
+w := w - \alpha \cdot \nabla_w J
+\]
+
+\vspace{1em}
+\textbf{Q8.} Given a single training example:
+
+\[
+x = 3, \quad y = 6
+\]
+
+and hypothesis is:
+
+\[
+h_\theta(x) = \theta_0 + \theta_1 x
+\]
+
+with parameter values: \( \theta_0 = 1, \theta_1 = 1 \)
+
+\begin{itemize}
+    \item[(a)] Calculate the predicted value \( h_\theta(x) \).
+    
+    \item[(b)] Compute the cost for this single training example using the cost function.
+\end{itemize}
+
+where \( m = 1 \) (only one training example).
+
+
+
+
+
+
+\vspace{1\baselineskip}
+
+\textbf{Q9.} Consider a univariate linear regression problem with a single training example:
+
+\[
+x = 2, \quad y = 4
+\]
+
+The hypothesis function is:
+\[
+h_\theta(x) = \theta_0 + \theta_1 x
+\]
+
+Given:
+\begin{itemize}
+    \item Initial parameters: \( \theta_0 = 0 \), \( \theta_1 = 1 \)
+    \item Learning rate: \( \alpha = 0.1 \)
+\end{itemize}
+
+Perform one step of gradient descent update for both \( \theta_0 \) and \( \theta_1 \) using the cost function, 
+with  \( m = 1 \) .
+
+\vspace{1\baselineskip}
+
+\textbf{Q10.} By taking following feature values:
+
+\[
+x^{(1)} = 10, \quad x^{(2)} = 200, \quad x^{(3)} = 1000
+\]
+
+\begin{itemize}
+    \item Apply mean normalization and feature scaling,
+   
+    where \( \mu \) is the mean of the feature values, and \( s \) is the range (i.e., \( s = \max(x) - \min(x) \)).
+\end{itemize}
+
+\vspace{1\baselineskip}
+
+\textbf{Q11.} Compute Normal Equation by Multivariate Regression for given the design matrix:
+
+\[
+X = 
+\begin{bmatrix}
+1 & 1 \\
+1 & 2 \\
+1 & 3
+\end{bmatrix},
+\quad
+y = 
+\begin{bmatrix}
+1 \\
+2 \\
+3
+\end{bmatrix}
+\]
+
+Compute the parameter vector \( \theta \) using the normal equation:
+
+\[
+\theta = (X^T X)^{-1} X^T y
+\]
+
+\vspace{1\baselineskip}
+
+
+\textbf{Q12.}  For the polynomial regression assuming given training data:
+
+\[
+x = 1, \quad y = 1; \quad x = 2, \quad y = 4
+\]
+
+You are fitting a quadratic model of the form:
+
+\[
+h_\theta(x) = \theta_0 + \theta_1 x + \theta_2 x^2
+\]
+
+\begin{itemize}
+    \item[(a)] Set up the design matrix \( X \) and output vector \( y \).
+    \item[(b)] Compute \( X^T X \) and \( X^T y \).
+\end{itemize}
+\vspace{1\baselineskip}
+
+\textbf{Q13. For the Logistic regression having the following values,}
+\[
+z = \theta^T x = 1.5
+\]
+
+Compute the sigmoid output.
+\vspace{1\baselineskip}
+
+
+\textbf{Q14. For the following feature values:}
+
+\[
+x = [50, 100, 150]
+\]
+
+\begin{itemize}
+    \item[(a)] Compute the mean \( \mu \) and range \( r \) of the feature values, where:
+    \[
+    \mu = \frac{1}{3}(50 + 100 + 150), \quad r = \max(x) - \min(x)
+    \]
+
+    \item[(b)] Normalize each feature.
+\end{itemize}
+
+\vspace{1\baselineskip}
+
+\textbf{Q15: For the Multivariate Cost Function}
+
+\[
+X = 
+\begin{bmatrix}
+1 & 1 & 2 \\
+1 & 2 & 1
+\end{bmatrix},
+\quad
+y = 
+\begin{bmatrix}
+5 \\
+6
+\end{bmatrix},
+\quad
+\theta = 
+\begin{bmatrix}
+0 \\
+1 \\
+1
+\end{bmatrix}
+\]
+
+Compute the cost function \( J(\theta) \) using :
+
+\[
+J(\theta) = \frac{1}{2m}(X\theta - y)^T (X\theta - y)
+\]
+
+\vspace{1\baselineskip}
+
+\textbf{Q16.Predict the  Logistic Regression for }
+
+\[
+\theta = 
+\begin{bmatrix}
+-4 \\
+2
+\end{bmatrix},
+\quad
+x = 
+\begin{bmatrix}
+1 \\
+3
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item[(a)] Compute \( z = \theta^T x \)
+    \item[(b)] Compute \( \sigma(z)\)
+    \item[(c)] Predict the class using a threshold of 0.5
+\end{itemize}
+
+\vspace{1\baselineskip}
+
+\textbf{Q17. Compute One Iteration of Clustering in K-Means}
+
+\[
+x^{(1)} = 2, \quad x^{(2)} = 4, \quad x^{(3)} = 10, \quad x^{(4)} = 12
+\]
+
+Use \( K = 2 \) clusters and initial centroids:
+
+\[
+\mu_1 = 2, \quad \mu_2 = 10
+\]
+
+\begin{itemize}
+    \item[(a)] Assign each point to the nearest centroid.
+
+    \item[(b)] Update centroids by averaging the points in each cluster.
+
+    \item[(c)] Show new cluster assignments and centroids.
+\end{itemize}
+\textbf{Q18. Compute Gradient Descent with Two Features}
+
+\[
+x = 
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}, \quad
+y = 5, \quad
+\theta = 
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}, \quad
+\alpha = 0.1
+\]
+
+Perform one iteration of gradient descent using the update rule:
+
+\[
+\theta_j := \theta_j - \alpha \cdot \frac{\partial J}{\partial \theta_j}
+\]
+
+Assume the hypothesis function is:
+
+\[
+h_\theta(x) = \theta^T x = \theta_0 + \theta_1 x_1
+\]
+
+\vspace{1\baselineskip}
+\textbf{Q19. Anomaly Detection for Temperature Monitoring}
+
+You are monitoring daily temperature data in Celsius for a server room:
+
+\[
+x = [22, 21, 23, 22, 24]
+\]
+
+\begin{itemize}
+    \item[(a)] Estimate the Gaussian parameters:
+  
+    \item[(b)] A new reading is observed: \( x = 30 \). Compute the probability:
+
+
+    \item[(c)] If the threshold \( \varepsilon = 0.01 \), is this an anomaly?
+\end{itemize}
+
+
+\vspace{1\baselineskip}
+
+\textbf{Q20. For the Principal Component Analysis (PCA), given 2D data points:}
+\[
+X = 
+\begin{bmatrix}
+2 & 0 \\
+0 & 2 \\
+3 & 1 \\
+1 & 3
+\end{bmatrix}
+\]
+
+\begin{itemize}
+    \item[(a)] Perform mean normalization:
+    \[
+    x_i := x_i - \mu \quad \text{where } \mu = \frac{1}{m} \sum_{i=1}^m x_i
+    \]
+
+    \item[(b)] Compute the covariance matrix:
+    \[
+    \Sigma = \frac{1}{m} X^T X
+    \]
+
+    \item[(c)] Compute the eigenvectors and eigenvalues of \( \Sigma \). These give the principal components.
+
+    \item[(d)] Reduce the data to 1D using the top principal component.
+\end{itemize}
+
+
+\textbf{Q21. Compute K-Means Clustering for given the following 2D data points}
+\[
+x^{(1)} = (1, 2), \quad x^{(2)} = (1, 4), \quad x^{(3)} = (5, 2), \quad x^{(4)} = (5, 4)
+\]
+
+Assume  \( K = 2 \) clusters.
+
+\begin{itemize}
+    \item[(a)] Initialize cluster centroids:
+    \[
+    \mu_1 = (1, 2), \quad \mu_2 = (5, 4)
+    \]
+
+    \item[(b)] Assign each data point to the nearest centroid using Euclidean distance.
+
+    \item[(c)] Update centroids as the mean of all points assigned to each cluster.
+
+    \item[(d)] Show new centroids after the update.
+\end{itemize}
+
+
+\vspace{1\baselineskip}
+
+\textbf {Q22.For the Continuous State Space: }
+
+An agent moves along a straight line. Its position can be any real number between 0 and 10.
+
+\begin{itemize}
+    \item[(a)] Explain why this is a continuous state space.
+
+    \item[(b)] If you want to use Q-learning, how can you convert this continuous space into discrete states?
+
+    \item[(c)] Suppose you divide the range into 5 equal intervals. Write the intervals and how you would assign the position \( x = 3.7 \) to a discrete state.
+\end{itemize}
+
+\vspace{1\baselineskip}
+
+
+\textbf{Q23. Apply the reinforcement learning for Grid World example }
+
+An agent is placed in a 3x3 grid. The agent starts at the top-left cell and wants to reach the bottom-right cell.
+
+\begin{itemize}
+    \item[(a)] Define the state space and action space.
+    \item[(b)] Describe the reward structure:
+    \begin{itemize}
+        \item -1 for each step,
+        \item +10 for reaching the goal.
+    \end{itemize}
+    \item[(c)] What is the goal of the agent in terms of reward?
+\end{itemize}
+
+
+\vspace{1\baselineskip}
+
+\textbf{Q24. Candy Machine under Reinforcement Learning}
+
+An agent interacts with a candy machine. The machine gives candy with different probabilities based on the button pressed.
+
+\begin{itemize}
+    \item[(a)] The agent has two actions:
+    \[
+    \text{Action A: 80\% chance of candy}, \quad \text{Action B: 30\% chance of candy}
+    \]
+    
+    \item[(b)] Reward is +1 if candy is received, 0 otherwise.
+    
+    \item[(c)] Which action should the agent learn to prefer and why?
+
+    \item[(d)] What RL algorithm can be used to learn this behavior?
+\end{itemize}
+
+
+\vspace{1\baselineskip}
+\textbf{Q25. Compute ReLU Activation }
+
+Consider a neuron with the following weighted input:
+
+\[
+z = w \cdot x + b
+\]
+
+Given:
+\[
+w = 2, \quad x = -3, \quad b = 1
+\]
+
+\begin{itemize}
+    \item[(a)] Compute the value of \( z \).
+    \item[(b)] Apply the ReLU activation function:
+    \[
+    \text{ReLU}(z) = \max(0, z)
+    \]
+    \item[(c)] What is the final output of the neuron?
+\end{itemize}
+
+
+
+\vspace{1\baselineskip}
+
+\textbf{Q26. Compute the Mean Squared Error }
+
+Given actual values: \( y = [3, 5, 7] \)  
+Predicted values: \( \hat{y} = [2, 5, 8] \)
+
+\vspace{0.5cm}
+
+\textbf{Q27. Compute MSE for}
+
+\[
+y = [1, 4], \quad \hat{y} = [2, 3]
+\]
+
+\vspace{1\baselineskip}
+
+\textbf{Q28. Apply Least Squares Method}
+
+Given the following data points:  
+\[
+(1, 2), (2, 3)
+\]
+
+\begin{itemize}
+    \item[(a)] Fit a line \( y = \theta_0 + \theta_1 x \) using the Least Squares Method.
+    \item[(b)] Set up the design matrix \( X \), target vector \( y \), and compute:
+    \[
+    \theta = (X^T X)^{-1} X^T y
+    \]
+\end{itemize}
+
+\vspace{0.5cm}
+
+\textbf{Q29. By using Least Squares Method for}
+
+Given Data:
+\[
+(1, 1), (3, 5)
+\]
+
+\begin{itemize}
+    \item[(a)] Formulate the system in matrix form and calculate the best-fit line parameters using LSM.
+\end{itemize}
+
+
+\vspace{1\baselineskip}
+
+\textbf{Q30. For given a dataset of weather conditions to decide whether to play tennis: }
+
+
+\begin{tabular}{|c|c|c|}
+\hline
+Outlook & Windy & Play \\
+\hline
+Sunny   & False & No \\
+Sunny   & True  & No \\
+Overcast & False & Yes \\
+Rainy   & False & Yes \\
+Rainy   & True  & No \\
+\hline
+\end{tabular}
+
+\begin{itemize}
+    \item[(a)] Build a simple decision tree using the features \texttt{Outlook} and \texttt{Windy}.
+    \item[(b)] Use Information Gain to choose the root node.
+    \item[(c)] Predict the output when Outlook = Rainy and Windy = False.
+\end{itemize}
+
+\end{document}
+
+\vspace{1\baselineskip}
+\vspace{1\baselineskip}
+
+
+\end{document}
